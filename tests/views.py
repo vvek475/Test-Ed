@@ -137,15 +137,15 @@ def TestList(request):
     context={'filter':testFilter,'subjects':subjects,'teachers':teachers}
     return render(request,'test/test.html',context)
 
-from django.views.generic import *
-class TestListView(ListView):
-    # template_name = 'test/new.html'
-    context_object_name= 'tests'
-    model=Test
-    queryset= Test.objects.filter(subjects=Subjects.objects.get(name='social'))
-    def get_context_data(self, **kwargs: any) -> dict[str, any]:
-        context= super(TestListView,self).get_context_data(**kwargs)
-        context['subject'] = 'science'
-        print(context)
+# from django.views.generic import *
+# class TestListView(ListView):
+#     # template_name = 'test/new.html'
+#     context_object_name= 'tests'
+#     model=Test
+#     queryset= Test.objects.filter(subjects=Subjects.objects.get(name='social'))
+#     def get_context_data(self, **kwargs: any) -> dict[str, any]:
+#         context= super(TestListView,self).get_context_data(**kwargs)
+#         context['subject'] = 'science'
+#         print(context)
         
-        return context
+#         return context

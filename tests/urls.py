@@ -10,5 +10,5 @@ urlpatterns = [
     path('createsubject',createSubjects,name="createSubject"),
     path('createQuestion',createQuestions,name='createQuestion'),
     path('testlist',TestList,name="testList"),
-    path('list',TestListView.as_view(template_name='test/new.html'))
+    # path('list',TestListView.as_view(template_name='test/new.html'))
 ]
