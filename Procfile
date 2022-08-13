@@ -1,1 +1,1 @@
-web : gunicorn TestEd.wsgi -b 0.0.0.0:$PORT
+web: gunicorn TestEd.wsgi --log-file=-
