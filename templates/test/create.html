@@ -1,0 +1,74 @@
+{% extends 'main.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form
+    method="post"
+    class="subject-create-form"
+    action="{% url 'createSubject' %}"
+  >
+    {% csrf_token %}
+    <input
+      required
+      placeholder="Create Subject"
+      name="name"
+      class="subject-create-input"
+    />
+    {% if form.errors %}
+    <div class="form-errors">{{form.errors}}</div>
+    {% endif %}
+    <input class="test-session-submit" type="submit" />
+  </form>
+</div>
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form
+    method="post"
+    class="subject-create-form question-create-form"
+    action="{% url 'createQuestion' %}"
+  >
+    {% csrf_token %}
+    <input
+      placeholder="Create Question"
+      name="question"
+      class="subject-create-input mx-0"
+    />
+    <p class="subject-create-input subject-create-select mx-0">
+      Subject : {{form2.subjects}}
+    </p>
+    <p class="subject-create-input subject-create-select mx-0">
+      Score : {{form2.score}}
+    </p>
+    <p class="subject-create-input subject-create-select mx-0">
+      choices: {{form2.choices}}
+    </p>
+    <p class="subject-create-input subject-create-select mx-0">
+      Answer : {{form2.answer}}
+    </p>
+    <input class="test-session-submit mx-0" type="submit" />
+  </form>
+</div>
+
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form
+    method="post"
+    class="subject-create-form question-create-form"
+    action=""
+  >
+    {% csrf_token %}
+    <input
+      placeholder="Create Test"
+      name="title"
+      class="subject-create-input mx-0"
+    />
+    <p class="subject-create-input subject-create-select mx-0">
+      Attempts : {{form3.attempts}}
+    </p>
+    <p class="subject-create-input subject-create-select mx-0">
+      Subjects : {{form3.subjects}}
+    </p>
+    <p class="subject-create-input subject-create-select mx-0">
+      Teacher : {{form3.teacher}}
+    </p>
+    <input class="test-session-submit mx-0" type="submit" />
+  </form>
+</div>
+
+{% endblock %}

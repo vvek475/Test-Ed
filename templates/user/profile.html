@@ -1,0 +1,26 @@
+{% extends 'main.html' %}{% block content %}
+<div class="row justify-content-md-center mt-5">
+  <div class="col-10">
+    <table class="table table-hover table-bordered table-responsive">
+      <tbody>
+        <tr class="table-primary">
+          <th scope="col">Test</th>
+          <th scope="col">Score</th>
+          <th scope="col">Test</th>
+          <th scope="col">LeaderBoard</th>
+          <th scope="col">Link</th>
+        </tr>
+        {% for test in tests %}
+        <tr>
+          <td>{{test.test}}</td>
+          <td>{{test.score}}</td>
+          <td>{{test.test}}</td>
+          <td><a href="{% url 'leaderboard' test.test.id %}">click here</a></td>
+          <td><a href="{% url 'startTest' test.id %}">click Here</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

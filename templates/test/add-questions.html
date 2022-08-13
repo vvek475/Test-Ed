@@ -1,0 +1,18 @@
+{% extends 'main.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <div>
+    <h4 class="section-heading h4">Select Question</h4>
+    <form method="post" class="subject-create-form" action="">
+      {% csrf_token %}
+      <select class="subject-create-input" name="questions" multiple>
+        {% for q in questions%} {% if q.istrue %}
+        <option value="{{q.id}}" selected>{{q.question}}</option>
+        {% else %}
+        <option value="{{q.id}}">{{q.question}}</option>
+        {% endif %} {%endfor%}
+      </select>
+      <input class="test-session-submit" type="submit" />
+    </form>
+  </div>
+</div>
+{% endblock %}

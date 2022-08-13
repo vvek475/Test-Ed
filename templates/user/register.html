@@ -1,0 +1,36 @@
+{% extends 'main.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form method="post" class="test-session-form" action="">
+    {% csrf_token %}
+    <input
+      placeholder="Username"
+      type="text"
+      class="test-session-select login-input mt-5"
+      name="username"
+    />
+    <input
+      placeholder="Email"
+      type="email"
+      class="test-session-select login-input"
+      name="email"
+    />
+    <input
+      placeholder="Password"
+      type="password"
+      class="test-session-select login-input"
+      name="password1"
+    />
+    <input
+      placeholder="Confirm Password"
+      type="password"
+      class="test-session-select login-input"
+      name="password2"
+    />
+    {% if form.errors %}
+    <div class="form-errors">{{form.errors}}</div>
+    {% endif %}
+    <input class="test-session-submit" type="submit" />
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'main.html' %} {% load static %}{% block content %}
+<section class="contest-win">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">      
+      <div class="col-lg-3 mx-auto">
+        <div class="contest-item">
+          <div class="top-content">
+            <span class="award">{{test.subjects}}</span>
+            <span class="price"> <span class="participants">Avg Score : {{avg.avg_score}}</span
+            > </span>
+          </div>
+          <img src="{% static 'assets/images/test-thumnail.jpg' %}" alt="" />
+          <h4>{{test.test.title}}</h4>
+          <div class="info">
+            <span class="participants"
+              >
+                <br />{{questions}}
+              Questions</span
+            >
+            <span class="submittions"
+              >
+              <br />{{enrolled}}
+              Participants</span
+            >
+          </div>
+          <div class="border-button">
+            <a href="{% url 'testSession' test.id qId.id index %}">Start Test</a>
+          </div>
+        </div>
+      </div>
+
+     
+  </div>
+</section>
+{% endblock %}

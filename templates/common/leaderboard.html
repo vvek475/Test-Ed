@@ -1,0 +1,38 @@
+{% extends 'main.html' %}{% block content %}
+
+<div class="row justify-content-md-center mt-5">
+  <div class="col-10">
+    <table class="table table-hover table-bordered table-responsive">
+      <tbody>
+        <tr class="table-primary">
+          <th scope="col">User</th>
+          <th scope="col">Score</th>
+        </tr>
+        {% for test in tests %} {% if test.user == request.user %}
+        <tr class="table-success">
+          <td>{{test.user}}</td>
+          <td>{{test.score}}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td>{{test.user}}</td>
+          <td>{{test.score}}</td>
+        </tr>
+        {% endif %} {% endfor %}
+      </tbody>
+    </table>
+    {% if userTest %}
+    <table class="table table-hover table-bordered mt-5">
+      <tr class="table-primary">
+        <th scope="col">User</th>
+        <th scope="col">Score</th>
+      </tr>
+      <tr>
+        <td>{{userTest.user}}</td>
+        <td>{{userTest.score}}</td>
+      </tr>
+    </table>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

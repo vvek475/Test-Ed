@@ -1,0 +1,26 @@
+{% extends 'main.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form method="post" class="test-session-form" action="">
+    {% csrf_token %}
+    <input
+      placeholder="Username"
+      type="text"
+      class="test-session-select login-input mt-5"
+      name="username"
+    />
+    <input
+      placeholder="Password"
+      type="password"
+      class="test-session-select login-input"
+      name="pwd"
+    />
+    <input class="test-session-submit" type="submit" />
+    {% if errors %}
+    <p class="login-form-errors text-light mt-3">{{errors.message}}</p>
+    {% endif %}
+    <p class="register-redirect">
+      New user <a href="{% url 'register' %}">click here</a> to signup
+    </p>
+  </form>
+</div>
+{% endblock %}

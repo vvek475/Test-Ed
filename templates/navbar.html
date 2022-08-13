@@ -1,0 +1,62 @@
+{% load static %}
+{% if messages %}
+<ul class="messages " style="opacity: 0.8;" >
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{message.tags}} text-light fs-5 fw-light bg-{{ message.tags }} d-flex justify-content-center align-items-center navbar-messages" {% endif %} >{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<header class="header-area header-sticky position-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a class="logo my-auto" href="{% url 'home' %}">
+            <span class="logo custom-logo"> Test-Ed </span>
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li><a href="{% url 'home' %}" class="active">Home</a></li>
+            {% if request.user.is_staff %}
+            <li class="has-sub">
+              <a href="javascript:void(0)">Create</a>
+              <ul class="sub-menu">
+                <li><a href="{% url 'create' %}">Tests</a></li>
+                {% if request.user.is_superuser %}
+                <li><a href="{% url 'createTeacher' %}">Teacher</a></li>
+                {% endif %}
+              </ul>
+            </li>
+            {% endif %}
+            {% if request.user.is_superuser %}
+                <li><a href="{% url 'getteacher' %}">Teachers</a></li>
+                {% endif %}
+            <li><a href="{% url 'testList' %}">Tests</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+          </ul>
+          {% if request.user.is_authenticated %}
+          <div class="border-button">
+            <a id="modal_trigger" href="{% url 'logout' %}" class="sign-in-up"
+              ><i class="fa fa-user"></i> Logout, {{ request.user }}</a
+            >
+          </div>
+          {% else %}
+          <div class="border-button">
+            <a id="modal_trigger" href="{% url 'login' %}" class="sign-in-up"
+              ><i class="fa fa-user"></i> Sign In/Up</a
+            >
+          </div>
+
+          {% endif %}
+          <a class="menu-trigger">
+            <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+</div>

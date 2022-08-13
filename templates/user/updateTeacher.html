@@ -1,0 +1,59 @@
+{% extends 'main.html' %} {% block content %}
+<div
+  class="d-flex justify-content-center align-items-center test-session-div flex-md-column"
+>
+  <form method="post" class="test-session-form border-bottom-0" action="">
+    {% csrf_token %}
+    <input
+      placeholder="User name"
+      type="text"
+      value="{{user.username}}"
+      class="test-session-select login-input mt-5"
+      name="username"
+    />
+    <input
+      placeholder="Email"
+      value="{{user.email}}"
+      type="email"
+      class="test-session-select login-input"
+      name="email"
+    />
+    <input
+      placeholder="Password"
+      type="password"
+      class="test-session-select login-input"
+      name="password1"
+    />
+    <input
+      placeholder="Confirm Password"
+      type="password"
+      class="test-session-select login-input"
+      name="password2"
+    /><select class="test-session-select mt-0" name="is_staff">
+      <option selected value="True">Teacher</option>
+      <option value="False">Student</option>
+    </select>
+    {% if form.errors %}
+    <div class="form-errors">{{form.errors}}</div>
+    {% endif %}
+    <input class="test-session-submit" type="submit" />
+  </form>
+  {% if teacher %}
+  <form
+    method="post"
+    class="test-session-form border-top-0"
+    action="{% url 'updateTeacherSubject' user.id %}"
+  >
+    {% csrf_token %}
+
+    <select class="test-session-select mt-0" name="subjects">
+      {% for subject in subjects %}
+      <option value="{{subject.id}}">{{subject}}</option>
+      {% endfor %}
+    </select>
+    <input class="test-session-submit" type="submit" />
+  </form>
+  {% endif %}
+</div>
+
+{% endblock %}

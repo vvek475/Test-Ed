@@ -1,0 +1,73 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<section class="contest-waiting">
+  <div class="container">
+    <div class="row">
+      <div class="section-heading text-center">
+        <h6>Featured Contests</h6>
+        <h4>Participate <em>In</em> Tests, <em>Win </em> Exclusives</h4>
+      </div>
+      {% for test in tests %}
+      <div class="col-lg-3 col-sm-6">
+        <a href="{% url 'startTest' test.id %}">
+          <div class="waiting-item">
+            <img src="{% static 'assets/images/exams.jpg' %}" alt="" />
+            <div class="down-content">
+              <h4>{{test.title}}</h4>
+              <p>
+                Lorem ipsum dolor siter and ametters conseietur adipiscing elit.
+              </p>
+              <span class="price">Subject: <em>{{test.subjects}}</em></span>
+              <span class="deadline"
+                >Attempts : <em>{{test.attempts}}</em></span
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="popular-categories">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="section-heading">
+          <h4>Your <em>Tests</em></h4>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="main-button">
+          <a href="{% url 'profile' %}">All Tests</a>
+        </div>
+      </div>
+      {% for test in userTest %}
+      <div class="col-lg-3 col-sm-6">
+        <div class="popular-item">
+          <div class="top-content">
+            <div class="right">
+              <h4>{{test.test.title}}</h4>
+              <span>Time : <em>{{test.date_created | timesince}} ago</em></span
+              ><br />
+              <span>Score : <em>{{test.score}}</em></span>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="{% static 'assets/images/exams-result.jpg' %}" alt="" />
+            <span class="category"
+              ><a href="{% url 'leaderboard' test.test.id %}"> Leaderboard </a>
+            </span>
+            <span class="likes"
+              ><a href="{% url 'startTest' test.test.id %}"> Test Link </a>
+            </span>
+          </div>
+          <div class="border-button">
+            <a href="{% url 'solution' test.test.id %}">Browse Solutions</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,131 @@
+.test-session-div {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+.test-session-form {
+  border: 1px solid grey;
+  padding: 25px;
+  min-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+}
+.test-session-label {
+  font-size: 22px;
+  margin: auto;
+  background-color: whitesmoke;
+  padding: 20px;
+  max-width: 80%;
+  color: rgb(0, 0, 0, 0.8);
+  font-family: sans-serif;
+}
+.test-session-select {
+  border: transparent;
+  min-width: 30%;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 20px;
+  background-color: aliceblue;
+  padding: 5px;
+  font-weight: 400;
+  color: rgb(0, 0, 0, 0.5);
+}
+option {
+  text-align-last: center !important;
+  -ms-text-align-last: center !important;
+  -moz-text-align-last: center !important;
+}
+.test-session-submit {
+  background: #00bdfe;
+  border: transparent;
+  color: white;
+  min-width: 30%;
+  margin: auto;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px;
+  text-align: center;
+}
+/* create page */
+.subject-create-form {
+  border: 1px solid grey;
+  padding: 25px;
+  min-width: 50vw;
+  display: flex;
+  font-weight: 400;
+}
+.subject-create-input {
+  padding: 5px;
+  font-size: 18px;
+  margin: auto;
+  max-width: 80%;
+  outline: none;
+}
+.question-create-form {
+  margin: none !important;
+  align-items: flex-start;
+  flex-direction: column !important;
+  gap: 10px;
+}
+.subject-create-select > * {
+  padding: 5px;
+  font-size: 18px;
+  margin: auto;
+  width: 800;
+  outline: none;
+}
+a {
+  color: #00bdfe;
+}
+select {
+  outline: none;
+}
+.login-input::placeholder {
+  text-align: center;
+  padding: 5px;
+}
+.login-input {
+  margin-top: 0px;
+}
+.register-redirect {
+  text-align: center;
+  margin: 20px;
+}
+.custom-logo {
+  font-size: 32px;
+  padding: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #00bdfe;
+}
+.test-search-table {
+  min-height: 250px;
+}
+p.login-form-errors {
+  height: 50px;
+  display: inline-block;
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(255, 0, 0, 0.8);
+}
+.form-errors {
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(255, 0, 0, 0.8);
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+.form-errors li {
+  font-size: 20px;
+  text-transform: capitalize;
+  padding-top: 5px;
+}
+/* navbar-messages */
+.navbar-messages {
+  width: 100%;
+  height: 50px;
+  text-transform: capitalize;
+}

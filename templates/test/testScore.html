@@ -1,0 +1,18 @@
+{% extends 'main.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form method="post" class="test-session-form" action="">
+    {% csrf_token %}
+    <span class="test-session-label"
+      >Are you sure You want to submit the test ?</span
+    >
+    <a
+      class="mt-5 test-session-submit"
+      href="{% url 'startTest' tId %}"
+      type="submit"
+    >
+      Re-start</a
+    >
+    <input class="mt-5 test-session-submit" type="submit" />
+  </form>
+</div>
+{% endblock %}

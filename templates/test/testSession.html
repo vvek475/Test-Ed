@@ -1,0 +1,15 @@
+{% extends 'main.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center test-session-div">
+  <form method="post" class="test-session-form" action="">
+    {% csrf_token %}
+    <span class="test-session-label">{{question}}</span>
+    <select class="test-session-select" name="answers">
+      <option selected>Select the answer</option>
+      {% for answer in answers %}
+      <option value="{{answer.id}}">{{answer.answer}}</option>
+      {% endfor %}
+    </select>
+    <input class="test-session-submit" type="submit" />
+  </form>
+</div>
+{% endblock %}
