@@ -1,1 +1,1 @@
-web: gunicorn TestEd.wsgi --log-file - --log-level debug
+web: gunicorn TestEd.wsgi --log-file -
