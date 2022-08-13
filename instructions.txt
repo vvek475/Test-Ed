@@ -1,5 +1,3 @@
-remove style in navbar
-restricting pages based on conditions and disabling tests attmepts count
 add unauthorized messages vefore redirect
 
 phase-2
