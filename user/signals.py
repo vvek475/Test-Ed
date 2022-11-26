@@ -4,7 +4,6 @@ from .models import *
 
 def student_profile(sender,instance,created,**kwargs):
     if created:
-        print(instance.is_staff)
         if instance.is_staff:
             group,created = Group.objects.get_or_create(name='teacher')
             instance.groups.add(group)  

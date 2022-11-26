@@ -22,4 +22,6 @@ urlpatterns = [
     path('',include('common.urls')),
     path('users/',include('user.urls')),
     path('tests/',include('tests.urls'))
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+]
+# +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+# print(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
